@@ -7,30 +7,62 @@ html {
 #flex-container { /* If you ever feel like it, try to find the answers to why these 3D declarations need to be on the parent element */
     margin-top: 20px;
     display: flex;
+    height: 150px;
     flex-direction: column;
     align-items: center;
-    height: 100px;
-    perspective: 500px; /* Parent element of the transform, makes it so it doesn't remain the same size */
+    perspective: 600px; /* Parent element of the transform, makes it so it doesn't remain the same size */
     position: relative;
     transform-style: preserve-3d; /* Parent element of the transform, so it obeys position instead of z-index */
+    justify-content: space-between;
 }
 
 #centerpiece {
     position: absolute; /* Method I'm using to place an object on the normal flat plane outside of the 3D */
     height: inherit;
-    width: 5px;
+    width: 3px;
     background-color: rgba(186, 221, 252, 0.699); 
 }
 
-#test {
-    width: 50px;
-    height: 50px;
-    background-color: red;
-    transform: translatez(100px); /* xyz plane transforms place elements in 3D space and this makes it closer to the viewer. */
+.box {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    transform: translatez(50px); /* xyz plane transforms place elements in 3D space and this makes it closer to the viewer. */
     animation-name: spin; /* Hopefully obvious */
-    animation-duration: 5s; /* Hopefully obvious */
     animation-iteration-count: infinite; /* Hopefully obvious */
     animation-timing-function: linear; /* Default has ease-in */
+}
+
+.box1 {
+    animation-duration: 24s;
+}
+
+.box2 {
+    animation-duration: 22s;
+}
+
+.box3 {
+    animation-duration: 20s;
+}
+
+.box4 {
+    animation-duration: 18s;
+}
+
+.box5 {
+    animation-duration: 16s;
+}
+
+.box6 {
+    animation-duration: 14s;
+}
+
+.box7 {
+    animation-duration: 12s;
+}
+
+.box8 {
+    animation-duration: 10s;
 }
 
 @keyframes spin {
