@@ -1,30 +1,36 @@
-#flex-container {
+/* If I ever want to use this as reference later, I'm making notes on individual CSS */
+
+html {
+    background-color: grey;
+}
+
+#flex-container { /* If you ever feel like it, try to find the answers to why these 3D declarations need to be on the parent element */
     margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100px;
-    perspective: 500px;
+    perspective: 500px; /* Parent element of the transform, makes it so it doesn't remain the same size */
     position: relative;
-    transform-style: preserve-3d;
+    transform-style: preserve-3d; /* Parent element of the transform, so it obeys position instead of z-index */
 }
 
 #centerpiece {
-    position: absolute;
+    position: absolute; /* Method I'm using to place an object on the normal flat plane outside of the 3D */
     height: inherit;
     width: 5px;
-    background-color: gold;
+    background-color: rgba(186, 221, 252, 0.699); 
 }
 
 #test {
     width: 50px;
     height: 50px;
     background-color: red;
-    transform: translatez(100px);
-    animation-name: spin;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    transform: translatez(100px); /* xyz plane transforms place elements in 3D space and this makes it closer to the viewer. */
+    animation-name: spin; /* Hopefully obvious */
+    animation-duration: 5s; /* Hopefully obvious */
+    animation-iteration-count: infinite; /* Hopefully obvious */
+    animation-timing-function: linear; /* Default has ease-in */
 }
 
 @keyframes spin {
