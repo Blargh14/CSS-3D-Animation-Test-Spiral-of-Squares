@@ -1,0 +1,37 @@
+#flex-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100px;
+    perspective: 500px;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+#centerpiece {
+    position: absolute;
+    height: inherit;
+    width: 5px;
+    background-color: gold;
+}
+
+#test {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    transform: translatez(100px);
+    animation-name: spin;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes spin {
+    from {
+        rotate: y 0;
+    }
+    to {
+        rotate: y 360deg;
+    }
+}
