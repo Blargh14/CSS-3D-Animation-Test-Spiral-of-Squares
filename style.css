@@ -5,9 +5,10 @@ html {
 }
 
 #flex-container { /* If you ever feel like it, try to find the answers to why these 3D declarations need to be on the parent element */
+    --box-size: 10px; /* To make changing all 3D element sizes easy */
     margin-top: 20px;
     display: flex;
-    height: 150px;
+    height: calc(var(--box-size) * 15);
     flex-direction: column;
     align-items: center;
     perspective: 600px; /* Parent element of the transform, makes it so it doesn't remain the same size */
@@ -24,13 +25,24 @@ html {
 }
 
 .box {
-    width: 10px;
-    height: 10px;
+    width: var(--box-size);
+    height: var(--box-size);
     background-color: white;
     transform: translatez(50px); /* xyz plane transforms place elements in 3D space and this makes it closer to the viewer. */
     animation-name: spin; /* Hopefully obvious */
     animation-iteration-count: infinite; /* Hopefully obvious */
     animation-timing-function: linear; /* Default has ease-in */
+    transform-style: preserve-3d; /* Will be the parent to it's 3d helpers, perspective managed by grandparent */
+}
+
+#test {
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+    width: var(--box-size);
+    height: var(--box-size);
+    background-color: white;
+    transform-style: preserve-3d;
 }
 
 .box1 {
@@ -63,6 +75,52 @@ html {
 
 .box8 {
     animation-duration: 10s;
+}
+
+.depth-helper {
+    background-color: inherit;
+    box-sizing: content-box;
+    border: .1px solid black;
+    position: absolute; /* Prevents the 3d from pushing eachother around */
+}
+
+.front {
+    width: inherit;
+    height: inherit;
+}
+
+.top {
+    height: calc(var(--box-size) / 5);
+    width: inherit;
+    transform: translate3d(0px, calc(var(--box-size) / -10), calc(var(--box-size) / 10));
+    rotate: x 90deg;
+}
+
+.bottom {
+    height: calc(var(--box-size) / 5);
+    width: inherit;
+    transform: translate3d(0px, calc(var(--box-size) / -10), calc(var(--box-size) * -1 - calc(var(--box-size) / -10)));
+    rotate: x 90deg;
+}
+
+.right {
+    height: inherit;
+    width: calc(var(--box-size) / 5);
+    transform: translate3d(calc(var(--box-size) / 10), 0px, calc(var(--box-size) - calc(var(--box-size) / 10)));
+    rotate: y 90deg;
+}
+
+.left {
+    height: inherit;
+    width: calc(var(--box-size) / 5);
+    transform: translate3d(calc(var(--box-size) / 10), 0px, calc(var(--box-size) / -10));
+    rotate: y 90deg;
+}
+
+.back {
+    height: var(--box-size);
+    width: var(--box-size);
+    transform: translatez(calc(var(--box-size) / -5));
 }
 
 @keyframes spin {
