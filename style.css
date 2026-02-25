@@ -2,10 +2,13 @@
 
 html {
     background-color: grey;
+    overflow-x: hidden;
 }
 
 #flex-container { /* If you ever feel like it, try to find the answers to why these 3D declarations need to be on the parent element */
     --box-size: 10px; /* To make changing all 3D element sizes easy */
+    --box-depth: translatez(50px); /* Added later to work with easier in javascript */
+    /* Side note, the above works to change variables for classes as long as it's on an individual element, maybe move to root */
     margin-top: 20px;
     display: flex;
     height: calc(var(--box-size) * 15);
@@ -28,7 +31,7 @@ html {
     width: var(--box-size);
     height: var(--box-size);
     background-color: white;
-    transform: translatez(50px); /* xyz plane transforms place elements in 3D space and this makes it closer to the viewer. */
+    transform: Var(--box-depth); /* xyz plane transforms place elements in 3D space and this makes it closer to the viewer. */
     animation-name: spin; /* Hopefully obvious */
     animation-iteration-count: infinite; /* Hopefully obvious */
     animation-timing-function: linear; /* Default has ease-in */

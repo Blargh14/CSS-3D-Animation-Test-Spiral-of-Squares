@@ -1,5 +1,6 @@
 randomColors = document.querySelector("#color-check");
 borderCheck = document.querySelector("#border-check");
+distanceBox = document.querySelector("#distance-box");
 perspectiveBox = document.querySelector("#perspective-box");
 perspectiveHome = document.querySelector("#flex-container");
 sizeBox = document.querySelector("#size-box");
@@ -7,12 +8,16 @@ sizeHome = document.querySelector("#flex-container");
 boxes = document.querySelectorAll(".box");
 borders = document.querySelectorAll(".depth-helper");
 
+distanceBox.addEventListener("keyup", e => {
+    sizeHome.style.setProperty("--box-depth", `translatez(${distanceBox.value}px)`) // Sizehome points to where I put the variables
+});
+
 perspectiveBox.addEventListener("keyup", e => {
     perspectiveHome.style.setProperty("perspective", `${perspectiveBox.value}px`)
 });
 
 sizeBox.addEventListener("keyup", e => {
-    // styles = getComputedStyle(sizeHome); // For below
+    // styles = getComputedStyle(sizeHome); // For below, was testing.
     // console.log(styles.getPropertyValue("--box-size")); // For getting property value
     sizeHome.style.setProperty("--box-size", `${sizeBox.value}px`)
 });
