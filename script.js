@@ -1,13 +1,21 @@
 randomColors = document.querySelector("#color-check");
 borderCheck = document.querySelector("#border-check");
+sizeBox = document.querySelector("#size-box");
+sizeHome = document.querySelector("#flex-container");
 boxes = document.querySelectorAll(".box");
 borders = document.querySelectorAll(".depth-helper");
+
+sizeBox.addEventListener("keyup", e => {
+    console.log("hi");
+    styles = getComputedStyle(sizeHome);
+    console.log(styles.getPropertyValue("--box-size"));
+    sizeHome.style.setProperty("--box-size", `${sizeBox.value}px`)
+});
 
 borderCheck.addEventListener("click", e=> {
     if (borderCheck.checked) {
         for (let i = 0; i < borders.length; i++) {
             borders[i].style.border = ".1px solid black";
-            console.log(borders[i].style.border);
         }
     }
     else {
