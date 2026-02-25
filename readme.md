@@ -1,0 +1,3 @@
+To anyone strange enough to be looking at my random projects, this was just an animation I thought up after seeing a 3D cube on MDN and thought "wow I didn't know vanilla webpages could do that". After which I thought up a little spiral spinner that I thought might be a neat addition to a little corner of a webpage or something. Just wanted to see it real, and turns out I could sing it into existence.
+
+Anyhow. HTML CSS JAVASCRIPT practiced. On to the next thing.
