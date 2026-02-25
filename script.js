@@ -1,5 +1,21 @@
 randomColors = document.querySelector("#color-check");
+borderCheck = document.querySelector("#border-check");
 boxes = document.querySelectorAll(".box");
+borders = document.querySelectorAll(".depth-helper");
+
+borderCheck.addEventListener("click", e=> {
+    if (borderCheck.checked) {
+        for (let i = 0; i < borders.length; i++) {
+            borders[i].style.border = ".1px solid black";
+            console.log(borders[i].style.border);
+        }
+    }
+    else {
+        for (let i = 0; i < borders.length; i++) {
+            borders[i].style.border = "0px";
+        }
+    }
+});
 
 randomColors.addEventListener("click", async e => {
     if (randomColors.checked) {
@@ -22,8 +38,6 @@ randomColors.addEventListener("click", async e => {
                 );
             } 
             await waitXSeconds(1);
-            
-            console.log("hello");
         }
     }
     else {
