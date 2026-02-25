@@ -1,14 +1,19 @@
 randomColors = document.querySelector("#color-check");
 borderCheck = document.querySelector("#border-check");
+perspectiveBox = document.querySelector("#perspective-box");
+perspectiveHome = document.querySelector("#flex-container");
 sizeBox = document.querySelector("#size-box");
 sizeHome = document.querySelector("#flex-container");
 boxes = document.querySelectorAll(".box");
 borders = document.querySelectorAll(".depth-helper");
 
+perspectiveBox.addEventListener("keyup", e => {
+    perspectiveHome.style.setProperty("perspective", `${perspectiveBox.value}px`)
+});
+
 sizeBox.addEventListener("keyup", e => {
-    console.log("hi");
-    styles = getComputedStyle(sizeHome);
-    console.log(styles.getPropertyValue("--box-size"));
+    // styles = getComputedStyle(sizeHome); // For below
+    // console.log(styles.getPropertyValue("--box-size")); // For getting property value
     sizeHome.style.setProperty("--box-size", `${sizeBox.value}px`)
 });
 
