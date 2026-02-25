@@ -41,39 +41,46 @@ html {
     left: 2.5px;
     width: var(--box-size);
     height: var(--box-size);
-    background-color: white;
     transform-style: preserve-3d;
 }
 
 .box1 {
+    background-color: white;
     animation-duration: 24s;
 }
 
 .box2 {
+    background-color: white;
     animation-duration: 22s;
 }
 
 .box3 {
+    background-color: white;
     animation-duration: 20s;
 }
 
 .box4 {
+    background-color: white;
     animation-duration: 18s;
 }
 
 .box5 {
+    background-color: white;
     animation-duration: 16s;
 }
 
 .box6 {
+    background-color: white;
     animation-duration: 14s;
 }
 
 .box7 {
+    background-color: white;
     animation-duration: 12s;
 }
 
 .box8 {
+    background-color: white;
     animation-duration: 10s;
 }
 
